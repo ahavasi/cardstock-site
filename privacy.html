@@ -14,32 +14,48 @@
 
   <main class="wrap">
     <article>
-      <p class="updated">Effective July 15, 2026</p>
+      <p class="updated">Effective July 16, 2026</p>
 
-      <p>CardOps is built so that your business data stays yours. This policy explains what the app touches and where it goes.</p>
+      <p>CardOps is built so that your business data stays yours. This policy explains what the app touches, where it goes, and the choices you have. CardOps has no accounts: we never ask for your name, email, or password, and we cannot identify you from the data described below.</p>
 
       <h2>Your inventory and sales data</h2>
       <p>Cards, prices, sales, shows, expenses, and photos you add are stored on your device and, if iCloud is enabled, synced through your <strong>private iCloud database</strong> using Apple's CloudKit. We cannot read, access, or recover this data — it lives in your Apple account, protected by Apple's security. Deleting the app and its iCloud data removes it.</p>
 
-      <h2>Camera</h2>
-      <p>The card scanner runs entirely on your device using Apple's Vision framework. Camera frames are processed locally to read card names and numbers and are <strong>never uploaded, stored, or shared</strong>. Photos you attach to inventory items are stored with your inventory data in your private iCloud.</p>
+      <h2>Camera and card scanning</h2>
+      <p>The card scanner runs entirely on your device using Apple's Vision framework. Scanner camera frames are processed locally and are never uploaded. Photos you attach to inventory items are stored with your inventory data in your private iCloud.</p>
 
-      <h2>Card prices</h2>
-      <p>When the app fetches market prices or the card catalog, it contacts our server with the card's identifier only. These requests carry no account, name, or identifier tied to you. Standard technical logs (IP address, request time) may be retained briefly by our hosting provider (Cloudflare) for security and reliability.</p>
+      <h2>AI features</h2>
+      <p><strong>Grade estimate (photos leave your device).</strong> When you use the AI condition/grade estimate, the front and back photos you take of that card are sent to our server and processed by <a href="https://www.anthropic.com/legal/privacy">Anthropic's</a> Claude model to produce the estimate. We do not store your photos. Our server keeps only the resulting estimate, keyed by an anonymous fingerprint of the images, for up to 30 days so repeat requests are instant. Photos are used to generate your estimate, not to train AI models.</p>
+      <p><strong>Deal Brain, weekly report, and portfolio questions.</strong> These features send the relevant card names and aggregate numbers (values, margins, totals; never your photos, notes, or customer information) to AI models running on our own server infrastructure (Cloudflare Workers AI). Responses are cached anonymously for up to 30 days.</p>
+      <p><strong>Grading accuracy telemetry.</strong> To improve the grade estimator, the app can report an anonymous record when a real grade comes back for a card we estimated: the estimate, the actual grade, and a random identifier, with nothing tied to you or your device. Turn this off anytime in <strong>Settings → Privacy → "Share grading data"</strong>.</p>
+
+      <h2>Price alerts (optional)</h2>
+      <p>If you turn on price alerts, we store your device's push token and the list of card IDs and names you own on our server so the nightly job can notify you of price moves. This list is keyed only by the push token, with no account or identity attached. Turning alerts off, or the token becoming invalid, removes the registration.</p>
+
+      <h2>Creator codes (optional)</h2>
+      <p>If you enter a creator's referral code, we store the code together with your app's random purchase identifier (see Purchases below), and we keep anonymous records of subscription transactions attributed to that code (product, price, and date) so we can share revenue with the creator who referred you. The code is also attached to your RevenueCat purchase record. None of this includes your name, email, or Apple ID, and entering a code never changes what you pay.</p>
+
+      <h2>Card prices and catalog</h2>
+      <p>When the app fetches market prices, sold listings, or the card catalog, it contacts our server with the card's identifier only. To prevent abuse, our server briefly counts requests per IP address (deleted within 24 hours). Standard technical logs may be retained briefly by our hosting provider (Cloudflare) for security and reliability.</p>
 
       <h2>Purchases</h2>
-      <p>Subscriptions and purchases are processed by Apple. We use <a href="https://www.revenuecat.com/privacy">RevenueCat</a> to validate purchases and manage subscription status; RevenueCat receives your purchase receipt and a random app-generated identifier — not your name, email, or Apple ID.</p>
+      <p>Subscriptions and purchases are processed by Apple. We use <a href="https://www.revenuecat.com/privacy">RevenueCat</a> to validate purchases and manage subscription status; RevenueCat receives your purchase receipt and a random app-generated identifier, not your name, email, or Apple ID.</p>
 
       <h2>Crash and performance diagnostics</h2>
       <p>To find and fix bugs, CardOps can send anonymous crash reports and performance data to <a href="https://sentry.io/privacy/">Sentry</a>. These reports contain technical details about the failure (device model, OS and app version, and diagnostic traces) but <strong>no name, email, account, IP address, or your inventory, prices, or photos</strong>. It is on by default; you can turn it off anytime in <strong>Settings → Privacy → "Share crash &amp; diagnostics"</strong>.</p>
+      <p><strong>Feedback you send.</strong> If you use the in-app feedback form, the message you write and the email address you optionally include are delivered to us through Sentry so we can respond. Feedback is only ever sent when you tap send.</p>
 
       <h2>What we don't do</h2>
       <ul class="plain">
         <li>No advertising, and no ad tracking</li>
-        <li>No behavioral or product analytics; the only data that leaves your device beyond the above is the anonymous crash &amp; performance diagnostics described here</li>
+        <li>No behavioral or product analytics</li>
         <li>No sale or sharing of personal data</li>
         <li>No accounts — we never ask for your email or password</li>
+        <li>No AI training on your data</li>
       </ul>
+
+      <h2>Your choices and deletion</h2>
+      <p>Diagnostics and grading telemetry can be turned off in <strong>Settings → Privacy</strong>; price alerts and creator codes are off unless you use them. To have server-side records deleted (price-alert registration, creator-code attribution), email us and include the creator code you used, if any; we'll remove the associated records. Your inventory itself is deleted by deleting the app and its iCloud data; it never touches our servers.</p>
 
       <h2>Children</h2>
       <p>CardOps is not directed at children under 13 and does not knowingly collect personal information from them.</p>
