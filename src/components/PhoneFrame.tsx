@@ -1,8 +1,8 @@
 import { type ReactNode, type CSSProperties } from "react";
-import { url } from "../lib/base";
 import "./PhoneFrame.css";
 
 type Props = {
+  /** Pre-baked framed screenshot (screenshot already composited in the device). */
   src: string;
   alt: string;
   /** Optional fixed max width (px). Omit to let section CSS drive --frame-w. */
@@ -13,7 +13,8 @@ type Props = {
   style?: CSSProperties;
 };
 
-/** A real App Store screenshot composited inside the real iPhone device frame. */
+/** A real App Store screenshot, pre-composited inside the iPhone frame
+ *  (see design/bake-frames.sh). Rendered as a single transparent image. */
 export function PhoneFrame({
   src,
   alt,
@@ -27,24 +28,13 @@ export function PhoneFrame({
     ...(width ? { ["--frame-w" as string]: `${width}px` } : {}),
     ...style,
   };
-  const loading = priority ? "eager" : "lazy";
   return (
     <div className={`frame ${className ?? ""}`} style={frameStyle}>
-      <div className="frame__screen">
-        <img
-          className="frame__shot"
-          src={src}
-          alt={alt}
-          loading={loading}
-          decoding="async"
-        />
-      </div>
       <img
-        className="frame__device"
-        src={url("iphone-frame.png")}
-        alt=""
-        aria-hidden="true"
-        loading={loading}
+        className="frame__img"
+        src={src}
+        alt={alt}
+        loading={priority ? "eager" : "lazy"}
         decoding="async"
       />
       {children ? <div className="frame__overlay">{children}</div> : null}

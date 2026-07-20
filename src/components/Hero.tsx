@@ -79,7 +79,7 @@ export function Hero() {
 
         <div className="hero__stage">
           <PhoneFrame
-            src={url("shots/shot-showmode.png")}
+            src={url("framed/framed-showmode.webp")}
             alt="CardOps Show Mode: a fast selling screen listing Pokémon cards — Charizard, Giratina VSTAR, Umbreon VMAX — each with live market prices and a one-tap Sell button."
             priority
           >

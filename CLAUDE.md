@@ -11,8 +11,12 @@ vendors who sell at shows. **Vite + React + TypeScript** multi-page app
   source is "GitHub Actions". Vite `base` is `/cardstock-site/`; reference public
   assets and internal links through `url()` in `src/lib/base.ts`, never bare `/…`.
 - **Source:** `src/pages/` (Home, Privacy, Terms), `src/components/`,
-  `src/styles/tokens.css` (brand tokens), `public/` (monogram, icon, og, real
-  App Store screenshots in `public/shots/`).
+  `src/styles/tokens.css` (brand tokens), `public/` (monogram, icon, og).
+- **Device screenshots:** `public/framed/*.webp` are App Store screenshots
+  pre-composited inside the iPhone frame. Regenerate with
+  `bash design/bake-frames.sh` (needs ImageMagick + the iOS project's fastlane
+  screenshots); it reads `design/iphone-frame.png`. Don't hand-composite in CSS —
+  an absolutely-positioned `<img>` with left+right+auto ignores `right`.
 
 ## Design Context
 

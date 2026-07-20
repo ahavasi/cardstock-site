@@ -97,7 +97,7 @@ export function FeatureShowcase() {
             stagger
           >
             <RevealItem className="feature-row__media">
-              <PhoneFrame src={url(`shots/shot-${r.shot}.png`)} alt={r.alt} />
+              <PhoneFrame src={url(`framed/framed-${r.shot}.webp`)} alt={r.alt} />
             </RevealItem>
             <RevealItem className="feature-row__copy">
               <span className="feature-row__kicker">
@@ -125,7 +125,7 @@ export function FeatureShowcase() {
           <Reveal className="gallery__grid" stagger>
             {GALLERY.map((g) => (
               <RevealItem className="gallery__item" key={g.shot}>
-                <PhoneFrame src={url(`shots/shot-${g.shot}.png`)} alt={g.alt} />
+                <PhoneFrame src={url(`framed/framed-${g.shot}.webp`)} alt={g.alt} />
                 <span className="gallery__label">
                   {g.label}
                   <span>{g.sub}</span>
