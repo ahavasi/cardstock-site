@@ -13,8 +13,10 @@ SRC="$HOME/Documents/Projects/Swift/pokemon-tracker/fastlane/screenshots/en-US"
 OUT="$ROOT/public/framed"
 mkdir -p "$OUT"
 
-# Screenshot placement rect (fills the display; the bezel overlaps the excess).
-SW=1163; SH=2454; SX=63; SY=171
+# Display hole rect, measured from the frame's cutout (magick mask -trim = %@).
+# Matches the native screenshot aspect (~0.461) so the fill crops ~nothing and the
+# status bar / tab bar stay fully inside the display.
+SW=1103; SH=2394; SX=93; SY=201
 CANVAS=1290x2796
 CX=644; CY=1398                                 # a point inside the screen hole
 WEB_W=560                                       # output width for the web
