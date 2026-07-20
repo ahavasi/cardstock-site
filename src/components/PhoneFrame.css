@@ -1,0 +1,49 @@
+.frame {
+  --bezel: oklch(0.1 0.02 285);
+  position: relative;
+  width: 100%;
+  max-width: var(--frame-w, 300px);
+  aspect-ratio: 1320 / 2868;
+  border-radius: clamp(30px, 9%, 46px);
+  background: var(--bezel);
+  padding: 3.2%;
+  box-shadow: var(--shadow-lg), 0 0 0 1px oklch(0.05 0.01 285 / 0.7) inset;
+  isolation: isolate;
+}
+
+.frame__screen {
+  position: relative;
+  height: 100%;
+  border-radius: clamp(24px, 7%, 38px);
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.frame__shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.frame__notch {
+  position: absolute;
+  top: 2.4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3.1%;
+  min-height: 18px;
+  background: var(--bezel);
+  border-radius: var(--r-pill);
+  z-index: 3;
+}
+
+/* floating annotation chip layer (e.g. hero "offline" proof) */
+.frame__overlay {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  inset: 0;
+}

@@ -1,0 +1,104 @@
+/* CardOps design tokens — pulled from the real app brand:
+   indigo-navy canvas (#1E1B4B), cream card-stock (#FBF8F1), amber action
+   (#F59E0B), indigo accent (#4F46E5), purple-gradient monogram. OKLCH throughout.
+   The site mirrors the app: cream light sections, deep-navy bands, amber CTAs. */
+
+:root {
+  /* ---- Brand core (from the app's asset catalog) ---- */
+  --navy: oklch(0.262 0.092 285);       /* #1E1B4B — app canvas / dark bands */
+  --navy-2: oklch(0.322 0.09 285);      /* raised surface on navy */
+  --navy-3: oklch(0.38 0.085 285);      /* hairline-lit surface on navy */
+  --navy-900: oklch(0.14 0.03 285);     /* #0B0B12 — icon bg / deepest footer */
+
+  --cream: oklch(0.978 0.012 92);       /* #FBF8F1 — card stock (real brand) */
+  --paper: oklch(0.988 0.007 92);       /* page background — warm near-white */
+  --paper-2: oklch(0.963 0.012 92);     /* alternating light panel */
+
+  --amber: oklch(0.79 0.155 72);        /* #F59E0B — CTAs, the Sell colour */
+  --amber-deep: oklch(0.72 0.15 64);    /* hover */
+  --amber-soft: oklch(0.93 0.06 82);    /* amber wash / tag body */
+
+  --indigo: oklch(0.515 0.205 274);     /* #4F46E5 — brand accent, links */
+  --indigo-2: oklch(0.72 0.125 279);    /* #A5B4FC — accent on dark */
+  --grad-a: oklch(0.76 0.125 300);      /* #B29AFB — monogram gradient top */
+  --grad-b: oklch(0.5 0.2 300);         /* #7433E0 — monogram gradient bottom */
+
+  /* ---- Ink (text) ---- */
+  --ink: oklch(0.262 0.092 285);        /* navy — primary text on light */
+  --ink-2: oklch(0.42 0.06 285);        /* secondary body (AA on cream) */
+  --ink-3: oklch(0.485 0.045 285);      /* muted meta (AA for >=14px on cream) */
+  --on-amber: oklch(0.24 0.08 285);     /* navy text on amber (matches app) */
+
+  /* ---- On dark (navy bands) ---- */
+  --on-navy: oklch(0.965 0.008 92);     /* cream-white text on navy */
+  --on-navy-2: oklch(0.8 0.035 285);    /* muted text on navy */
+
+  /* ---- Semantic ---- */
+  --profit: oklch(0.8 0.16 155);        /* money-up green on dark */
+  --profit-ink: oklch(0.5 0.13 152);    /* money-up green on light (>=14px) */
+
+  /* ---- Lines ---- */
+  --line: color-mix(in oklch, var(--ink) 12%, transparent);
+  --line-strong: color-mix(in oklch, var(--ink) 20%, transparent);
+  --line-navy: color-mix(in oklch, white 13%, transparent);
+
+  /* ---- Type ---- */
+  --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --font-body: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --font-mono: "Martian Mono Variable", "Martian Mono", ui-monospace,
+    "SFMono-Regular", Menlo, monospace;
+
+  --text-hero: clamp(2.5rem, 1.5rem + 4.2vw, 4rem);
+  --text-h2: clamp(1.85rem, 1.2rem + 2.6vw, 2.85rem);
+  --text-h3: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  --text-lead: clamp(1.08rem, 1.0rem + 0.5vw, 1.34rem);
+  --text-body: 1.0625rem;
+  --text-sm: 0.9rem;
+  --text-xs: 0.78rem;
+
+  --tracking-hero: -0.032em;
+  --tracking-h2: -0.022em;
+
+  /* ---- Spacing / rhythm ---- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --section-y: clamp(3.75rem, 2rem + 7vw, 7.5rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
+  --measure: 66ch;
+  --maxw: 1140px;
+
+  /* ---- Radii ---- */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 1px 2px oklch(0.26 0.09 285 / 0.07),
+    0 2px 8px oklch(0.26 0.09 285 / 0.06);
+  --shadow-md: 0 6px 18px oklch(0.26 0.09 285 / 0.1),
+    0 14px 34px oklch(0.26 0.09 285 / 0.1);
+  --shadow-lg: 0 12px 34px oklch(0.14 0.05 285 / 0.16),
+    0 34px 70px oklch(0.14 0.05 285 / 0.22);
+
+  /* ---- Motion ---- */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 130ms;
+  --dur-mid: 240ms;
+  --dur-slow: 440ms;
+
+  /* ---- z-index scale ---- */
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-overlay: 300;
+}
