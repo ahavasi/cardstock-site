@@ -106,7 +106,6 @@ button {
     box-shadow var(--dur-mid) var(--ease-out-quart),
     background var(--dur-fast) var(--ease-out-quart),
     border-color var(--dur-fast) var(--ease-out-quart);
-  will-change: transform;
 }
 .btn--primary {
   background: var(--amber);

@@ -10,6 +10,9 @@
   display: block;
   width: 100%;
   height: auto;
+  /* reserve the box before the webp loads (all framed shots are 560x1214) —
+     kills the layout shift, worst on the eager above-the-fold hero shot */
+  aspect-ratio: 560 / 1214;
   /* shadow follows the phone silhouette (transparent margins) */
   filter: drop-shadow(0 18px 34px oklch(0.14 0.05 285 / 0.32))
     drop-shadow(0 6px 12px oklch(0.14 0.05 285 / 0.22));

@@ -18,8 +18,13 @@
   box-shadow: var(--shadow-lg);
 }
 .appstore-badge:focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 3px solid var(--amber);
   outline-offset: 3px;
+}
+/* dark badge lives on the amber final-CTA band — an amber ring would vanish.
+   Navy reads clearly on both amber and the black badge. */
+.appstore-badge--dark:focus-visible {
+  outline-color: var(--navy);
 }
 
 /* black badge — for light backgrounds (amber CTA) */
