@@ -35,14 +35,12 @@
 }
 .feature-row__media .frame {
   --frame-w: clamp(230px, 30vw, 288px);
-  transition: transform 0.5s var(--ease-out-quart);
 }
 .feature-row__media .frame__img {
   transition: filter 0.5s var(--ease-out-quart);
 }
-.feature-row:hover .frame {
-  transform: translateY(-10px) rotate(-0.6deg);
-}
+/* non-clickable screenshot: deepen the shadow on hover, don't lift (a lift would
+   fake a clickable affordance — lift is reserved for real CTAs). */
 .feature-row:hover .frame__img {
   filter: drop-shadow(0 26px 44px oklch(0.14 0.05 285 / 0.36))
     drop-shadow(0 8px 14px oklch(0.14 0.05 285 / 0.24));
@@ -111,14 +109,21 @@
   gap: var(--s-4);
   text-align: center;
 }
+/* stagger alternate items down so 4 screenshots read as a curated arrangement,
+   not a rigid card grid (margin, not transform — keeps clear of the hover state) */
+.gallery__item:nth-child(even) {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
 .gallery__item .frame {
   --frame-w: 100%;
   max-width: 210px;
-  transition: transform 0.45s var(--ease-out-quart),
-    filter 0.45s var(--ease-out-quart);
 }
-.gallery__item:hover .frame {
-  transform: translateY(-10px) scale(1.03);
+.gallery__item .frame__img {
+  transition: filter 0.45s var(--ease-out-quart);
+}
+.gallery__item:hover .frame__img {
+  filter: drop-shadow(0 22px 40px oklch(0.14 0.05 285 / 0.3))
+    drop-shadow(0 8px 14px oklch(0.14 0.05 285 / 0.22));
 }
 .gallery__label {
   font-weight: 600;
@@ -142,5 +147,12 @@
   }
   .feature-row__copy {
     text-align: left;
+  }
+}
+
+/* single-column gallery: drop the stagger so the stack spaces evenly */
+@media (max-width: 520px) {
+  .gallery__item:nth-child(even) {
+    margin-top: 0;
   }
 }

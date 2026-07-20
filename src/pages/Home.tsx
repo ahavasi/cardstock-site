@@ -4,6 +4,7 @@ import { Hero } from "../components/Hero";
 import { ReliabilityBeat } from "../components/ReliabilityBeat";
 import { FeatureShowcase } from "../components/FeatureShowcase";
 import { BeliefStrip } from "../components/BeliefStrip";
+import { FaqSection } from "../components/FaqSection";
 import { FinalCTA } from "../components/FinalCTA";
 
 export function Home() {
@@ -18,6 +19,7 @@ export function Home() {
         <ReliabilityBeat />
         <FeatureShowcase />
         <BeliefStrip />
+        <FaqSection />
         <FinalCTA />
       </main>
       <SiteFooter />

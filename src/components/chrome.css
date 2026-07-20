@@ -79,7 +79,7 @@
 .site-header__cta:hover {
   background: var(--amber-deep);
   color: var(--on-amber);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 /* ---- Footer ---- */

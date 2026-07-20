@@ -18,6 +18,7 @@ export function SiteFooter() {
           <nav className="site-footer__links" aria-label="Footer">
             <a href={url("#features")}>Features</a>
             <a href={url("#reliability")}>Offline</a>
+            <a href={url("#faq")}>FAQ</a>
             <a href={SUPPORT_HREF}>Support</a>
             <a href={url("privacy.html")}>Privacy</a>
             <a href={url("terms.html")}>Terms</a>

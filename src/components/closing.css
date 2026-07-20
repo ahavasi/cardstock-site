@@ -3,22 +3,6 @@
   background: var(--navy);
   color: var(--on-navy);
   position: relative;
-  overflow: hidden;
-}
-.beliefs::before {
-  content: "";
-  position: absolute;
-  inset: auto auto -30% -10%;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(
-    circle,
-    color-mix(in oklch, var(--grad-b) 40%, transparent),
-    transparent 68%
-  );
-  filter: blur(30px);
-  opacity: 0.5;
-  pointer-events: none;
 }
 .beliefs__head {
   position: relative;

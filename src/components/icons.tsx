@@ -97,6 +97,12 @@ export const IconArrow = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const IconChevron = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
 export const IconBolt = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}>
     <path d="M13 3L5 13h6l-1 8 8-10h-6z" />
