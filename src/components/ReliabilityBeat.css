@@ -114,6 +114,7 @@
 .sigcard__status {
   position: relative;
   display: flex;
+  flex-wrap: wrap; /* the nowrap "OFFLINE" tag would overflow on ~320px phones */
   align-items: center;
   gap: 10px;
   padding-top: 16px;
