@@ -1,5 +1,6 @@
 import { Wordmark } from "./Wordmark";
 import { SUPPORT_HREF } from "../lib/site";
+import { url } from "../lib/base";
 import "./chrome.css";
 
 export function SiteFooter() {
@@ -15,11 +16,11 @@ export function SiteFooter() {
             </p>
           </div>
           <nav className="site-footer__links" aria-label="Footer">
-            <a href="/#features">Features</a>
-            <a href="/#reliability">Offline</a>
+            <a href={url("#features")}>Features</a>
+            <a href={url("#reliability")}>Offline</a>
             <a href={SUPPORT_HREF}>Support</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/terms.html">Terms</a>
+            <a href={url("privacy.html")}>Privacy</a>
+            <a href={url("terms.html")}>Terms</a>
           </nav>
         </div>
         <div className="site-footer__legal">

@@ -5,6 +5,8 @@ import react from "@vitejs/plugin-react";
 // keep clean URLs and work on any static host without SPA-fallback config.
 // Paths are root-relative; Vite resolves them from the project root.
 export default defineConfig({
+  // Project is served from https://ahavasi.github.io/cardstock-site/
+  base: "/cardstock-site/",
   plugins: [react()],
   build: {
     rollupOptions: {

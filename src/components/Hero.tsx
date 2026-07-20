@@ -4,6 +4,7 @@ import { NOTIFY_HREF } from "../lib/site";
 import { PhoneFrame } from "./PhoneFrame";
 import { CountUp } from "./CountUp";
 import { IconArrow, IconCheck } from "./icons";
+import { url } from "../lib/base";
 import "./Hero.css";
 
 const copyParent = {
@@ -78,7 +79,7 @@ export function Hero() {
 
         <div className="hero__stage">
           <PhoneFrame
-            src="/shots/shot-showmode.png"
+            src={url("shots/shot-showmode.png")}
             alt="CardOps Show Mode: a fast selling screen listing Pokémon cards — Charizard, Giratina VSTAR, Umbreon VMAX — each with live market prices and a one-tap Sell button."
             priority
           >

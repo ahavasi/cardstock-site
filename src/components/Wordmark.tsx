@@ -1,3 +1,4 @@
+import { url } from "../lib/base";
 import "./chrome.css";
 
 export function Wordmark({
@@ -8,8 +9,8 @@ export function Wordmark({
   href?: string;
 }) {
   return (
-    <a className={`wordmark ${size === "lg" ? "wordmark--lg" : ""}`} href={href}>
-      <img src="/cardops-mark.svg" alt="" width={44} height={44} />
+    <a className={`wordmark ${size === "lg" ? "wordmark--lg" : ""}`} href={url(href)}>
+      <img src={url("cardops-mark.svg")} alt="" width={44} height={44} />
       <span>CardOps</span>
     </a>
   );

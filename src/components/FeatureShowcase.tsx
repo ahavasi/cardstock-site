@@ -2,6 +2,7 @@ import { type ComponentType, type SVGProps } from "react";
 import { PhoneFrame } from "./PhoneFrame";
 import { Reveal, RevealItem } from "./Reveal";
 import { IconChart, IconScan, IconCoins, IconBag } from "./icons";
+import { url } from "../lib/base";
 import "./FeatureShowcase.css";
 
 type Row = {
@@ -95,7 +96,7 @@ export function FeatureShowcase() {
             className={`feature-row ${i % 2 === 1 ? "feature-row--flip" : ""}`}
           >
             <div className="feature-row__media">
-              <PhoneFrame src={`/shots/shot-${r.shot}.png`} alt={r.alt} />
+              <PhoneFrame src={url(`shots/shot-${r.shot}.png`)} alt={r.alt} />
             </div>
             <div className="feature-row__copy">
               <span className="feature-row__kicker">
@@ -123,7 +124,7 @@ export function FeatureShowcase() {
           <Reveal className="gallery__grid" stagger>
             {GALLERY.map((g) => (
               <RevealItem className="gallery__item" key={g.shot}>
-                <PhoneFrame src={`/shots/shot-${g.shot}.png`} alt={g.alt} />
+                <PhoneFrame src={url(`shots/shot-${g.shot}.png`)} alt={g.alt} />
                 <span className="gallery__label">
                   {g.label}
                   <span>{g.sub}</span>

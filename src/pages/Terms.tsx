@@ -1,4 +1,5 @@
 import { LegalPage } from "./LegalPage";
+import { url } from "../lib/base";
 
 export function Terms() {
   return (
@@ -77,8 +78,8 @@ export function Terms() {
       <h2>8. Your data and responsibilities</h2>
       <p>
         Your inventory, sales, and business records are stored on your device and
-        in your private iCloud (see the <a href="/privacy.html">Privacy Policy</a>
-        ). You are responsible for maintaining backups (e.g. via CSV export) and
+        in your private iCloud (see the{" "}
+        <a href={url("privacy.html")}>Privacy Policy</a>). You are responsible for maintaining backups (e.g. via CSV export) and
         for the accuracy of records you keep for tax or legal purposes.
       </p>
 

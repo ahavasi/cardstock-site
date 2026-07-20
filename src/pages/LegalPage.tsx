@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import { Wordmark } from "../components/Wordmark";
 import { SiteFooter } from "../components/SiteFooter";
+import { url } from "../lib/base";
 import "./Legal.css";
 
 export function LegalPage({
@@ -17,7 +18,7 @@ export function LegalPage({
       <div className="legal__top">
         <div className="container legal__top-row">
           <Wordmark href="/" />
-          <a className="legal__back" href="/">
+          <a className="legal__back" href={url("/")}>
             ← Back to CardOps
           </a>
         </div>

@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { NOTIFY_HREF } from "../lib/site";
+import { url } from "../lib/base";
 import "./closing.css";
 
 export function FinalCTA() {
@@ -9,7 +10,7 @@ export function FinalCTA() {
         <Reveal className="final-cta__inner">
           <img
             className="final-cta__mark"
-            src="/cardops-icon.png"
+            src={url("cardops-icon.png")}
             alt="CardOps app icon"
             width={66}
             height={66}
