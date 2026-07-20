@@ -22,7 +22,7 @@ const ROWS: Row[] = [
     icon: IconChart,
     kicker: "The dashboard",
     title: "Your whole operation, at a glance.",
-    body: "Open the app and today's sales, this show's profit, and what your inventory is worth are right there — always current, no spreadsheet to reconcile.",
+    body: "Open the app and today's sales, this show's profit, and what your inventory is worth are right there. Always current, no spreadsheet to reconcile.",
   },
   {
     shot: "inventory",
@@ -30,7 +30,7 @@ const ROWS: Row[] = [
     icon: IconScan,
     kicker: "Inventory + scanner",
     title: "Every card, scanned and priced.",
-    body: "Point the camera at a card and on-device recognition adds it — matched against a 20,000+ Pokémon catalog and a live value — in seconds. Your whole stock, in your pocket.",
+    body: "Point the camera at a card and on-device recognition adds it in seconds, matched against a 20,000+ Pokémon catalog and a live value. Your whole stock, in your pocket.",
   },
   {
     shot: "card",
@@ -38,7 +38,7 @@ const ROWS: Row[] = [
     icon: IconChart,
     kicker: "Market values",
     title: "Live prices for every printing.",
-    body: "Real market values and trend history by set and condition, so you price with the market instead of guessing — and never leave money on the table.",
+    body: "Real market values and trend history by set and condition, so you price with the market instead of guessing. Never leave money on the table.",
   },
   {
     shot: "insights",
@@ -46,7 +46,7 @@ const ROWS: Row[] = [
     icon: IconCoins,
     kicker: "Profit + insights",
     title: "Know your profit, price paid to cash out.",
-    body: "Per-show sales, fees, buys, and cash flow — see which shows actually made money and where your real margin is. The numbers a binder can't give you.",
+    body: "Per-show sales, fees, buys, and cash flow: see which shows actually made money and where your real margin is. The numbers a binder can't give you.",
   },
 ];
 
@@ -85,7 +85,7 @@ export function FeatureShowcase() {
           <p className="eyebrow">Everything the table needs</p>
           <h2>One app, from scan to sold to settled.</h2>
           <p>
-            Built with a vendor's day in mind — capture stock fast, sell it
+            Built with a vendor's day in mind: capture stock fast, sell it
             without friction, and know exactly what each show made.
           </p>
         </Reveal>

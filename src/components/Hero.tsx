@@ -52,14 +52,14 @@ export function Hero() {
           <Item className="hero__lead" {...itemProps}>
             CardOps is the inventory app for card vendors. Scan a card, know what
             it cost and what it&rsquo;s worth, and run your whole table
-            offline&nbsp;— then see exactly what the show made.
+            offline, then see exactly what the show made.
           </Item>
 
           <Item className="hero__cta" {...itemProps}>
             <a className="btn btn--primary" href={NOTIFY_HREF}>
               Notify me at launch
             </a>
-            <a className="btn btn--ghost" href="#features">
+            <a className="btn btn--ghost" href="#reliability">
               See it in action
               <IconArrow className="btn__arrow" width={18} height={18} />
             </a>
@@ -68,7 +68,7 @@ export function Hero() {
           <Item className="hero__trust" {...itemProps}>
             <span>
               <IconCheck width={16} height={16} />
-              20,000+ Pokémon cards — more TCGs coming
+              20,000+ Pokémon cards, more TCGs coming
             </span>
             <span>
               <IconCheck width={16} height={16} />

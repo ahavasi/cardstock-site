@@ -34,7 +34,7 @@ function SignalDrop() {
       <div className="sigcard__status">
         <span className="sigcard__tag">OFFLINE · STILL SELLING</span>
         <span className="sigcard__note">
-          Sales keep saving <b>locally</b> — sync when you&rsquo;re back.
+          Sales keep saving <b>locally</b>. Sync when you&rsquo;re back.
         </span>
       </div>
     </div>
@@ -52,7 +52,7 @@ export function ReliabilityBeat() {
           </h2>
           <p className="reliability__lead">
             Show Mode is offline-first. Search your whole inventory, ring up
-            sales, log trades and buys — instantly, on the device, with the room
+            sales, log trades and buys. Instantly, on the device, with the room
             packed and the bars at zero. Everything syncs the moment
             you&rsquo;re back online.
           </p>
@@ -61,7 +61,7 @@ export function ReliabilityBeat() {
               <span className="proof__ic">
                 <IconBolt width={20} height={20} />
               </span>
-              Instant search across 20,000+ Pokémon cards — no spinner, no signal
+              Instant search across 20,000+ Pokémon cards. No spinner, no signal
             </li>
             <li>
               <span className="proof__ic">
@@ -73,7 +73,7 @@ export function ReliabilityBeat() {
               <span className="proof__ic">
                 <IconShield width={20} height={20} />
               </span>
-              Nothing lost if you close the app — it&rsquo;s saved on your device
+              Nothing lost if you close the app: it&rsquo;s saved on your device
             </li>
           </ul>
         </Reveal>

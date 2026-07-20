@@ -12,7 +12,7 @@ export function SiteFooter() {
             <Wordmark />
             <p className="site-footer__tag">
               The inventory app for Pokémon card vendors who sell at shows. Scan,
-              price, and run your table — offline.
+              price, and run your table, offline.
             </p>
           </div>
           <nav className="site-footer__links" aria-label="Footer">

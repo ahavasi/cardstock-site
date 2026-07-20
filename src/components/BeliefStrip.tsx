@@ -11,7 +11,7 @@ const BELIEFS = [
   {
     icon: IconScan,
     title: "A scanner you can trust",
-    body: "On-device recognition across a 20,000+ Pokémon catalog — fast, accurate, and private.",
+    body: "On-device recognition across a 20,000+ Pokémon catalog. Fast, accurate, and private.",
   },
   {
     icon: IconCoins,
