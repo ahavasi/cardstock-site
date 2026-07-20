@@ -3,7 +3,8 @@ import { EASE_EXPO } from "../lib/anim";
 import { NOTIFY_HREF } from "../lib/site";
 import { PhoneFrame } from "./PhoneFrame";
 import { CountUp } from "./CountUp";
-import { IconArrow, IconCheck } from "./icons";
+import { AppStoreBadge } from "./AppStoreBadge";
+import { IconArrow, IconCheck, IconApple } from "./icons";
 import { url } from "../lib/base";
 import "./Hero.css";
 
@@ -41,7 +42,9 @@ export function Hero() {
         <Copy className="hero__copy" {...copyProps}>
           <Item className="hero__badge" {...itemProps}>
             <span className="hero__badge-dot" aria-hidden="true" />
-            Coming soon · <b>App&nbsp;Store</b>
+            Coming soon
+            <IconApple className="hero__badge-apple" />
+            <b>App&nbsp;Store</b>
           </Item>
 
           <motion.h1 {...itemProps}>
@@ -56,9 +59,7 @@ export function Hero() {
           </Item>
 
           <Item className="hero__cta" {...itemProps}>
-            <a className="btn btn--primary" href={NOTIFY_HREF}>
-              Notify me at launch
-            </a>
+            <AppStoreBadge href={NOTIFY_HREF} variant="light" />
             <a className="btn btn--ghost" href="#reliability">
               See it in action
               <IconArrow className="btn__arrow" width={18} height={18} />
