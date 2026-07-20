@@ -13,9 +13,10 @@ SRC="$HOME/Documents/Projects/Swift/pokemon-tracker/fastlane/screenshots/en-US"
 OUT="$ROOT/public/framed"
 mkdir -p "$OUT"
 
-# frame screen rect (measured from the transparent cutout): 1163x2454 +63+171
+# Screenshot placement rect (fills the display; the bezel overlaps the excess).
 SW=1163; SH=2454; SX=63; SY=171
 CANVAS=1290x2796
+CX=644; CY=1398                                 # a point inside the screen hole
 WEB_W=560                                       # output width for the web
 
 pairs=(
@@ -25,15 +26,26 @@ pairs=(
 )
 
 tmp="$(mktemp -d)"
+
+# Build the display mask ONCE from the frame's own cutout. The bezel is opaque and
+# the display is a transparent hole *enclosed* by it; the area outside the phone is
+# also transparent. Flood-fill from a point inside the hole to isolate ONLY the
+# display (the fill can't cross the opaque bezel ring into the outside), so the
+# screenshot is shaped exactly like the display — rounded corners, no square poke.
+magick "$FRAME" -alpha extract "$tmp/a.png"                       # bezel=white, holes=black
+magick "$tmp/a.png" -fuzz 40% -fill white -draw "color $CX,$CY floodfill" "$tmp/f.png"
+magick "$tmp/f.png" "$tmp/a.png" -compose Difference -composite "$tmp/mask.png"  # display=white, else=black
+
 for p in "${pairs[@]}"; do
   in="${p%%:*}"; out="${p##*:}"
   shot="$SRC/iPhone 17 Pro Max-$in.png"
   [ -f "$shot" ] || { echo "missing: $shot" >&2; continue; }
-  # cover-crop the screenshot to the screen opening, then composite into the frame
+  # cover-crop the screenshot to the display rect, place it on the canvas,
+  # clip it to the display mask, then lay the frame on top.
   magick "$shot" -resize "${SW}x${SH}^" -gravity center -extent "${SW}x${SH}" "$tmp/scr.png"
-  magick -size "$CANVAS" xc:none \
-    "$tmp/scr.png" -geometry "+${SX}+${SY}" -composite \
-    "$FRAME" -composite \
+  magick -size "$CANVAS" xc:none "$tmp/scr.png" -geometry "+${SX}+${SY}" -composite "$tmp/scrfull.png"
+  magick "$tmp/scrfull.png" "$tmp/mask.png" -alpha Off -compose CopyOpacity -composite "$tmp/scrm.png"
+  magick "$tmp/scrm.png" "$FRAME" -compose over -composite \
     -resize "${WEB_W}x" \
     -quality 84 -define webp:alpha-quality=92 "$OUT/framed-$out.webp"
   echo "baked framed-$out.webp"
