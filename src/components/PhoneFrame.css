@@ -9,20 +9,25 @@
     drop-shadow(0 6px 12px oklch(0.14 0.05 285 / 0.22));
 }
 
-/* screen area, measured from the frame's transparent cutout */
-.frame__shot {
+/* screen area, measured from the frame's transparent cutout. A block wrapper
+   (not the img) takes the insets, so left+right actually size it. */
+.frame__screen {
   position: absolute;
   top: 6.12%;
   left: 4.88%;
   right: 4.96%;
   bottom: 6.12%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 8% / 3.6%;
+  overflow: hidden;
+  border-radius: 7% / 3.3%;
   background: var(--navy);
   z-index: 1;
+}
+.frame__shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 
 .frame__device {

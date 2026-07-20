@@ -30,13 +30,15 @@ export function PhoneFrame({
   const loading = priority ? "eager" : "lazy";
   return (
     <div className={`frame ${className ?? ""}`} style={frameStyle}>
-      <img
-        className="frame__shot"
-        src={src}
-        alt={alt}
-        loading={loading}
-        decoding="async"
-      />
+      <div className="frame__screen">
+        <img
+          className="frame__shot"
+          src={src}
+          alt={alt}
+          loading={loading}
+          decoding="async"
+        />
+      </div>
       <img
         className="frame__device"
         src={url("iphone-frame.png")}
