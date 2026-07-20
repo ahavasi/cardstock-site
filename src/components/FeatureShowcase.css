@@ -7,13 +7,9 @@
   max-width: 40ch;
   margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
 }
-.showcase__head .eyebrow {
-  color: var(--indigo);
-}
 .showcase__head h2 {
   font-size: var(--text-h2);
   letter-spacing: var(--tracking-h2);
-  margin-top: var(--s-3);
 }
 .showcase__head p {
   margin-top: var(--s-4);

@@ -39,6 +39,15 @@ export const IconChart = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const IconGrid = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+    <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+    <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+    <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+  </svg>
+);
+
 export const IconBag = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}>
     <path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8z" />

@@ -46,7 +46,7 @@ export function ReliabilityBeat() {
     <section className="reliability section" id="reliability">
       <div className="container reliability__grid">
         <Reveal>
-          <p className="eyebrow">Built for dead zones</p>
+          <p className="eyebrow">Show Mode</p>
           <h2>
             Convention-hall wifi drops. <em>Your table keeps running.</em>
           </h2>

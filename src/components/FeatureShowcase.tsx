@@ -1,7 +1,7 @@
 import { type ComponentType, type SVGProps } from "react";
 import { PhoneFrame } from "./PhoneFrame";
 import { Reveal, RevealItem } from "./Reveal";
-import { IconChart, IconScan, IconCoins, IconBag } from "./icons";
+import { IconChart, IconScan, IconCoins, IconGrid } from "./icons";
 import { url } from "../lib/base";
 import "./FeatureShowcase.css";
 
@@ -19,7 +19,7 @@ const ROWS: Row[] = [
   {
     shot: "home",
     alt: "CardOps home dashboard showing today's sales, this show's profit, and total inventory value.",
-    icon: IconChart,
+    icon: IconGrid,
     kicker: "The dashboard",
     title: "Your whole operation, at a glance.",
     body: "Open the app and today's sales, this show's profit, and what your inventory is worth are right there. Always current, no spreadsheet to reconcile.",
@@ -82,7 +82,6 @@ export function FeatureShowcase() {
     <section className="showcase section" id="features">
       <div className="container">
         <Reveal className="showcase__head">
-          <p className="eyebrow">Everything the table needs</p>
           <h2>One app, from scan to sold to settled.</h2>
           <p>
             Built with a vendor's day in mind: capture stock fast, sell it
@@ -114,12 +113,6 @@ export function FeatureShowcase() {
 
         <div className="gallery">
           <Reveal className="gallery__head">
-            <span className="feature-row__kicker">
-              <span className="ic">
-                <IconBag width={19} height={19} />
-              </span>
-              And the rest of the season
-            </span>
             <h3>More of what CardOps does</h3>
           </Reveal>
           <Reveal className="gallery__grid" stagger>

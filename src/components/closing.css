@@ -22,61 +22,70 @@
 }
 .beliefs__head {
   position: relative;
-  max-width: 38ch;
+  max-width: 30ch;
   margin-bottom: clamp(2rem, 1rem + 3vw, 3.5rem);
-}
-.beliefs__head .eyebrow {
-  color: var(--amber);
 }
 .beliefs__head h2 {
   color: var(--on-navy);
   font-size: var(--text-h2);
   letter-spacing: var(--tracking-h2);
-  margin-top: var(--s-3);
 }
-.beliefs__grid {
+
+/* Spec-sheet list, not a card grid: the offline claim leads full-width, the
+   other three sit in a hairline-divided 3-up row. Rows aren't clickable, so
+   no card chrome and no hover-lift (which would fake an affordance). */
+.beliefs__list {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: clamp(1.5rem, 1rem + 2vw, 3.5rem);
 }
 .belief {
-  background: var(--navy-2);
-  border: 1px solid var(--line-navy);
-  border-radius: var(--r-lg);
-  padding: var(--s-6) var(--s-5);
-  transition: transform 0.35s var(--ease-out-quart),
-    border-color 0.35s var(--ease-out-quart),
-    background 0.35s var(--ease-out-quart);
+  display: flex;
+  gap: var(--s-4);
+  padding-block: var(--s-5);
+  border-top: 1px solid var(--line-navy);
 }
-.belief:hover {
-  transform: translateY(-6px);
-  border-color: color-mix(in oklch, var(--amber) 45%, var(--line-navy));
-  background: var(--navy-3);
+.belief--lead {
+  grid-column: 1 / -1;
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: var(--s-6);
 }
-.belief:hover .belief__ic {
-  background: color-mix(in oklch, var(--amber) 26%, transparent);
-}
-.belief__ic {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: color-mix(in oklch, var(--amber) 18%, transparent);
+.belief__no {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--amber);
-  margin-bottom: var(--s-4);
+  padding-top: 2px;
 }
 .belief h3 {
   color: var(--on-navy);
   font-size: 1.15rem;
   letter-spacing: -0.01em;
 }
+.belief--lead h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  max-width: 18ch;
+}
 .belief p {
   margin-top: var(--s-2);
   color: var(--on-navy-2);
   font-size: var(--text-sm);
-  line-height: 1.5;
+  line-height: 1.55;
+  max-width: 42ch;
+}
+.belief--lead p {
+  font-size: var(--text-lead);
+  max-width: 46ch;
+}
+
+@media (max-width: 680px) {
+  .beliefs__list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- Final CTA (amber band) ---- */
