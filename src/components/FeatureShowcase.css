@@ -39,6 +39,13 @@
 }
 .feature-row__media .frame {
   --frame-w: clamp(230px, 30vw, 288px);
+  transition: transform 0.5s var(--ease-out-quart),
+    filter 0.5s var(--ease-out-quart);
+}
+.feature-row:hover .frame {
+  transform: translateY(-10px) rotate(-0.6deg);
+  filter: drop-shadow(0 26px 44px oklch(0.14 0.05 285 / 0.36))
+    drop-shadow(0 8px 14px oklch(0.14 0.05 285 / 0.24));
 }
 .feature-row--flip .feature-row__media {
   order: 2;
@@ -107,6 +114,11 @@
 .gallery__item .frame {
   --frame-w: 100%;
   max-width: 210px;
+  transition: transform 0.45s var(--ease-out-quart),
+    filter 0.45s var(--ease-out-quart);
+}
+.gallery__item:hover .frame {
+  transform: translateY(-10px) scale(1.03);
 }
 .gallery__label {
   font-weight: 600;

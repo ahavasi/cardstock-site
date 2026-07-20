@@ -94,11 +94,12 @@ export function FeatureShowcase() {
           <Reveal
             key={r.shot}
             className={`feature-row ${i % 2 === 1 ? "feature-row--flip" : ""}`}
+            stagger
           >
-            <div className="feature-row__media">
+            <RevealItem className="feature-row__media">
               <PhoneFrame src={url(`shots/shot-${r.shot}.png`)} alt={r.alt} />
-            </div>
-            <div className="feature-row__copy">
+            </RevealItem>
+            <RevealItem className="feature-row__copy">
               <span className="feature-row__kicker">
                 <span className="ic">
                   <r.icon width={19} height={19} />
@@ -107,7 +108,7 @@ export function FeatureShowcase() {
               </span>
               <h3>{r.title}</h3>
               <p>{r.body}</p>
-            </div>
+            </RevealItem>
           </Reveal>
         ))}
 

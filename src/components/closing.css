@@ -45,6 +45,17 @@
   border: 1px solid var(--line-navy);
   border-radius: var(--r-lg);
   padding: var(--s-6) var(--s-5);
+  transition: transform 0.35s var(--ease-out-quart),
+    border-color 0.35s var(--ease-out-quart),
+    background 0.35s var(--ease-out-quart);
+}
+.belief:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in oklch, var(--amber) 45%, var(--line-navy));
+  background: var(--navy-3);
+}
+.belief:hover .belief__ic {
+  background: color-mix(in oklch, var(--amber) 26%, transparent);
 }
 .belief__ic {
   display: grid;

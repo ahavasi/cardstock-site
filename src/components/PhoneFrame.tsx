@@ -1,9 +1,11 @@
 import { type ReactNode, type CSSProperties } from "react";
+import { url } from "../lib/base";
 import "./PhoneFrame.css";
 
 type Props = {
   src: string;
   alt: string;
+  /** Optional fixed max width (px). Omit to let section CSS drive --frame-w. */
   width?: number;
   priority?: boolean;
   children?: ReactNode;
@@ -11,31 +13,38 @@ type Props = {
   style?: CSSProperties;
 };
 
-/** Device frame wrapping a real App Store screenshot. */
+/** A real App Store screenshot composited inside the real iPhone device frame. */
 export function PhoneFrame({
   src,
   alt,
-  width = 300,
+  width,
   priority = false,
   children,
   className,
   style,
 }: Props) {
+  const frameStyle: CSSProperties = {
+    ...(width ? { ["--frame-w" as string]: `${width}px` } : {}),
+    ...style,
+  };
+  const loading = priority ? "eager" : "lazy";
   return (
-    <div
-      className={`frame ${className ?? ""}`}
-      style={{ ["--frame-w" as string]: `${width}px`, ...style }}
-    >
-      <span className="frame__notch" aria-hidden="true" />
-      <div className="frame__screen">
-        <img
-          className="frame__shot"
-          src={src}
-          alt={alt}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-        />
-      </div>
+    <div className={`frame ${className ?? ""}`} style={frameStyle}>
+      <img
+        className="frame__shot"
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+      />
+      <img
+        className="frame__device"
+        src={url("iphone-frame.png")}
+        alt=""
+        aria-hidden="true"
+        loading={loading}
+        decoding="async"
+      />
       {children ? <div className="frame__overlay">{children}</div> : null}
     </div>
   );
