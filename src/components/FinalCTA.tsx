@@ -15,10 +15,10 @@ export function FinalCTA() {
             width={66}
             height={66}
           />
-          <h2>Be first through the door at launch.</h2>
+          <h2>Coming soon to the App Store.</h2>
           <p>
-            CardOps is coming to the App Store. Tell me where to reach you and
-            I&rsquo;ll send one email the day it goes live. Nothing else.
+            CardOps launches soon for iPhone. Want a heads-up the day it goes
+            live? Send me a note and I&rsquo;ll let you know.
           </p>
           <a className="btn btn--dark" href={NOTIFY_HREF}>
             Notify me at launch
